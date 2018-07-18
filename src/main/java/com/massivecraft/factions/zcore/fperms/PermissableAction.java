@@ -40,12 +40,23 @@ public enum PermissableAction {
     WITHDRAW("withdraw"),
     CHEST("chest"),
     SPAWNER("spawner"),
-    CLAIM("claim");
+    CHUNKBUSTER("chunkbuster"),
+    TELEPORT("teleport"),
+    TPAHERE("tpahere");
 
     private String name;
 
     PermissableAction(String name) {
         this.name = name;
+    }
+
+    /**
+     * Get the friendly name of this action. Used for editing in commands.
+     *
+     * @return friendly name of the action as a String.
+     */
+    public String getName() {
+        return this.name;
     }
 
     /**
@@ -62,15 +73,6 @@ public enum PermissableAction {
         }
 
         return null;
-    }
-
-    /**
-     * Get the friendly name of this action. Used for editing in commands.
-     *
-     * @return friendly name of the action as a String.
-     */
-    public String getName() {
-        return this.name;
     }
 
     @Override
@@ -148,5 +150,4 @@ public enum PermissableAction {
 
         return string;
     }
-
 }
